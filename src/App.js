@@ -1,23 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Service from './pages/Service';
+import CarouselComp from './components/CarouselComp';
+import Productdevelopment from './pages/Productdevelopment';
+import Websitedevelopment from './pages/Websitedevelopment';
+import AIandIOTsolution from './pages/AIandIOTsolution';
+import Cloudcomputing from './pages/Cloudcomputing';
+import Blockchaindevelopment from './pages/Blockchaindevelopment';
+import Digitalmarketing from './pages/Digitalmarketing';
+import Mobileappdevelopment from './pages/Mobileappdevelopment';
+import Footer from './components/Footer';
+import Portfolio from './pages/Portfolio';
+import Career from './pages/Career';
+import TrainingConsulting from './pages/TrainingConsulting';
+import OurClients from './pages/OurClients';
+import Brochure from './pages/Brochure';
+import Technology from './pages/Technology';
+import Products from './pages/Products';
+import Mobileapp from './pages/Mobileapp';
+import WhatsAppFloatingIcon from './pages/WhatsAppFloatingIcon';
+import ScrollToTop from './components/ScrollToTop';
 function App() {
+  <ScrollToTop/>
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Home /> */}
+      <Router>
+        <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/about"element={<About/>}/>
+        <Route path="/service"element={<Service/>}/>
+        <Route path="/contact"element={<Contact/>}/>
+        <Route path="/carouselcomp"element={<CarouselComp/>}/>
+        <Route path="/Productdevelopment"element={<Productdevelopment/>}/>
+        <Route path="/Websitedevelopment" element={<Websitedevelopment/>}/>
+        <Route path="/Mobileappdevelopment" element={<Mobileappdevelopment/>}/>
+        <Route path="/AIandIOTsolution" element={<AIandIOTsolution/>}/>
+        <Route path="Cloudcomputing" element={<Cloudcomputing/>}/>
+        <Route path="Blockchaindevelopment" element={<Blockchaindevelopment/>}/>
+        <Route path="Digitalmarketing"element={<Digitalmarketing/>}/>
+        <Route path="Portfolio" element={<Portfolio/>}/>
+        <Route path="Career" element={<Career/>}/>
+        <Route path="TrainingConsulting" element={<TrainingConsulting/>}/>
+       <Route path="OurClients" element={<OurClients/>}/>
+       <Route path="Brochure" element={<Brochure/>}/>
+       <Route path="Technology" element={<Technology/>}/>
+       <Route path="Products" element={<Products/>}/>
+       <Route path="Mobileapp" element={<Mobileapp/>}/>
+        </Routes>
+      </Router>
+      <WhatsAppFloatingIcon/>
+      <Footer />
     </div>
   );
 }
