@@ -1,5 +1,17 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Box, Menu, MenuItem, IconButton, Button } from '@mui/material';
+import {
+  AppBar,
+  Toolbar,
+  Box,
+  Menu,
+  MenuItem,
+  IconButton,
+  Button,
+  Drawer,
+  List,
+  ListItem,
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import logo from '../images/logo1.png';
@@ -15,16 +27,26 @@ const LogoContainer = styled(Box)`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+
+  @media (max-width: 768px) {
+    flex-grow: 1; /* Allow logo to take available space */
+    justify-content: space-between; /* Space out the logo and toggle button */
+  }
 `;
 
 const NavMenu = styled(Box)`
   display: flex;
   flex-grow: 1;
   justify-content: end;
+
+  @media (max-width: 768px) {
+    display: none; /* Hide NavMenu on small screens */
+  }
 `;
 
 const NavItem = styled.div`
   margin-left: 1.5rem;
+
   a {
     color: blue;
     text-decoration: none;
@@ -37,18 +59,33 @@ const NavItem = styled.div`
 `;
 
 const BrochureButton = styled(Button)`
-  background: blue!important;
-  color: white!important;
+  background: blue !important;
+  color: white !important;
   border-radius: 10px;
-  margin-left:10px!important; /* Aligns to the right */
+  margin-left: 10px !important;
+
   &:hover {
     background-color: darkblue;
+  }
+
+  @media (max-width: 768px) {
+    display: none; /* Hide BrochureButton on small screens */
+  }
+`;
+
+const MobileMenuButton = styled(IconButton)`
+  display: none; /* Hide by default */
+
+  @media (max-width: 768px) {
+    display: block; /* Show MobileMenuButton on small screens */
+    color: blue; /* Adjust color of the button */
   }
 `;
 
 function Header() {
-  const brochureUrl = "/BrochurePage.pdf"; // Make sure the path is correct
+  const brochureUrl = '/BrochurePage.pdf'; // Make sure the path is correct
   const [anchorEl, setAnchorEl] = useState(null);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   // Open the dropdown menu
   const handleMenuClick = (event) => {
@@ -60,15 +97,30 @@ function Header() {
     setAnchorEl(null);
   };
 
+  // Toggle the drawer menu for mobile view
+  const toggleDrawer = (open) => (event) => {
+    setIsDrawerOpen(open);
+  };
+
   return (
     <HeaderContainer position="fixed">
       <Toolbar>
         {/* Logo Section */}
         <LogoContainer>
           <img src={logo} alt="Logo" style={{ width: '150px', height: '53px' }} />
+
+          {/* Mobile Menu Toggle Button */}
+          <MobileMenuButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            onClick={toggleDrawer(true)}
+          >
+            <MenuIcon />
+          </MobileMenuButton>
         </LogoContainer>
 
-        {/* Navigation Menu */}
+        {/* Navigation Menu for Desktop */}
         <NavMenu>
           <NavItem>
             <Link to="/">Home</Link>
@@ -79,8 +131,8 @@ function Header() {
 
           {/* Dropdown for Services */}
           <NavItem>
-            <Box 
-              onClick={handleMenuClick} 
+            <Box
+              onClick={handleMenuClick}
               sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
             >
               <Link to="/service" style={{ color: 'blue', textDecoration: 'none' }}>
@@ -109,46 +161,33 @@ function Header() {
                 },
               }}
             >
-              <MenuItem onClick={handleMenuClose}>
-                <Link to="/Productdevelopment" style={{ textDecoration: 'none', }}>
+              <MenuItem onClick={handleMenuClose} style={{ textDecoration: 'none',display:'block', }}>
+                <Link to="/Productdevelopment" style={{textDecoration:'none',display:'block'}}>
                   Product Development
                 </Link>
-              </MenuItem>
-              <MenuItem onClick={handleMenuClose}>
-                <Link to="/Websitedevelopment" style={{ textDecoration: 'none' }}>
+                <Link to="/Websitedevelopment"  style={{textDecoration:'none',display:'block'}}>
                   Website Development
                 </Link>
-              </MenuItem>
-              <MenuItem onClick={handleMenuClose}>
-                <Link to="/Mobileappdevelopment" style={{ textDecoration: 'none' }}>
-                  Mobile App Development
+                <Link to="/AISolution"  style={{textDecoration:'none',display:'block'}}>
+                  AI Solution
                 </Link>
-              </MenuItem>
-              <MenuItem onClick={handleMenuClose}>
-                <Link to="/AIandIOTsolution" style={{ textDecoration: 'none' }}>
-                  AI & IOT Solutions
+                <Link to="/IOTSolution"  style={{textDecoration:'none',display:'block'}}>
+                  IOT Solution
                 </Link>
-              </MenuItem>
-              <MenuItem onClick={handleMenuClose}>
-                <Link to="/Cloudcomputing" style={{ textDecoration: 'none' }}>
+                <Link to="/Cloudcomputing"  style={{textDecoration:'none',display:'block'}}>
                   Cloud Computing
                 </Link>
-              </MenuItem>
-              <MenuItem onClick={handleMenuClose}>
-                <Link to="/Blockchaindevelopment" style={{ textDecoration: 'none' }}>
-                  Blockchain Development
+                <Link to="/Blockchaindevelopment"  style={{textDecoration:'none',display:'block'}}>
+                Blockchain Development
+                </Link>
+                <Link to="/Digitalmarketing"  style={{textDecoration:'none',display:'block'}}>
+                Digitalmarketing
+                </Link>
+                <Link to ="/TrainingConsulting"  style={{textDecoration:'none',display:'block'}}>
+                TrainingConsulting
                 </Link>
               </MenuItem>
-              <MenuItem onClick={handleMenuClose}>
-                <Link to="/Digitalmarketing" style={{ textDecoration: 'none' }}>
-                  Digital Marketing
-                </Link>
-              </MenuItem>
-              <MenuItem onClick={handleMenuClose}>
-                <Link to="/TrainingConsulting" style={{ textDecoration: 'none' }}>
-                  Training & Consulting
-                </Link>
-              </MenuItem>
+              {/* Other menu items */}
             </Menu>
           </NavItem>
           <NavItem>
@@ -157,7 +196,6 @@ function Header() {
           <NavItem>
             <Link to="/technology">Technology</Link>
           </NavItem>
-          
           <NavItem>
             <Link to="/portfolio">Portfolio</Link>
           </NavItem>
@@ -167,15 +205,40 @@ function Header() {
           <NavItem>
             <Link to="/contact">Contact</Link>
           </NavItem>
+          <BrochureButton href={brochureUrl} rel="noopener noreferrer">
+            Brochure
+          </BrochureButton>
         </NavMenu>
 
-        {/* Brochure Button */}
-        <BrochureButton
-          href={brochureUrl}
-          rel="noopener noreferrer"
-        >
-          Brochure
-        </BrochureButton>
+        {/* Drawer for Mobile View */}
+        <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer(false)}>
+          <List sx={{ width: 250 }}>
+            <ListItem button>
+              <Link to="/">Home</Link>
+            </ListItem>
+            <ListItem button>
+              <Link to="/about">About</Link>
+            </ListItem>
+            <ListItem button>
+              <Link to="/service">Service</Link>
+            </ListItem>
+            <ListItem button>
+              <Link to="/products">Products</Link>
+            </ListItem>
+            <ListItem button>
+              <Link to="/technology">Technology</Link>
+            </ListItem>
+            <ListItem button>
+              <Link to="/portfolio">Portfolio</Link>
+            </ListItem>
+            <ListItem button>
+              <Link to="/career">Career</Link>
+            </ListItem>
+            <ListItem button>
+              <Link to="/contact">Contact</Link>
+            </ListItem>
+          </List>
+        </Drawer>
       </Toolbar>
     </HeaderContainer>
   );

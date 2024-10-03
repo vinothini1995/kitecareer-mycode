@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobile, faCode, faShieldAlt, faTools, faPaintBrush, faPlug } from '@fortawesome/free-solid-svg-icons';
 import bannerImage from '../images/Mobilebanner.jpg'; // Adjust the path to your image
 import Header from '../components/Header';
+import { Helmet } from 'react-helmet';
 
 // Define keyframes for animations
 const fadeIn = keyframes`
@@ -102,6 +103,9 @@ const IconContainer = styled.div`
 const Mobileappdevelopment = () => {
   return (
     <div>
+      <Helmet>
+        <title>Service-Mobileappdevelopment</title>
+      </Helmet>
       <Header />
       <PageContainer>
         <Banner />

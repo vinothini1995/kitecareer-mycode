@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink, faLock, faCubes, faHandshake, faKey, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import blockchainBannerImage from '../images/Blockchainbanner.jpg'; // Adjust the path to your banner image
 import Header from '../components/Header';
+import { Helmet } from 'react-helmet';
 
 // Define keyframes for animations
 const fadeIn = keyframes`
@@ -103,7 +104,11 @@ const IconContainer = styled.div`
 const Blockchaindevelopment = () => {
   return (
     <div>
+      <Helmet>
+        <title>Service-Blockchaindevelopment</title>
+      </Helmet>
       <Header />
+
       <PageContainer>
         <Banner />
         <Header1>Blockchain Development Services</Header1>

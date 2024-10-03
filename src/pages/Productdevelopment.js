@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCogs, faDraftingCompass, faTasks, faCode, faTools, faRocket } from '@fortawesome/free-solid-svg-icons';
 import productBanner from '../images/Productbanner.jpg'; // Replace with your banner image path
 import Header from '../components/Header';
+import { Helmet } from 'react-helmet';
 
 // Keyframes for animations
 const fadeIn = keyframes`
@@ -103,6 +104,9 @@ const IconContainer = styled.div`
 const Productdevelopment = () => {
   return (
     <div>
+      <Helmet>
+        <title>Service-Product Development</title>
+      </Helmet>
       <Header />
       <PageContainer>
         <Banner />

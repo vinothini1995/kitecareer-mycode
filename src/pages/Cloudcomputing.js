@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCloud, faServer, faDatabase, faShieldAlt, faSyncAlt, faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
 import bannerImage from '../images/Cloudbanner.jpg'; // Adjust the path to your banner image
 import Header from '../components/Header';
+import { Helmet } from 'react-helmet';
 
 // Define keyframes for animations
 const fadeIn = keyframes`
@@ -103,6 +104,9 @@ const IconContainer = styled.div`
 const Cloudcomputing = () => {
   return (
     <div>
+      <Helmet>
+        <title>Service-Cloud Computing</title>
+      </Helmet>
       <Header />
       <PageContainer>
         <Banner />

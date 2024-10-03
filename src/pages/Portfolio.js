@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import 'aos/dist/aos.css'; // Import AOS styles
 import AOS from 'aos';
 import Header from '../components/Header';
+import { Helmet } from 'react-helmet';
+
 import bannerImage from '../images/AI&IOTbanner.jpg'; // Adjust your image
 import { Link } from 'react-router-dom';
 import QuaentNutrision from '../images/Portfolio/quant.jpg';
@@ -141,6 +143,9 @@ const Portfolio = () => {
   }, []);
   return (
     <div>
+      <Helmet>
+        <title>Portfolio</title>
+      </Helmet>
       <Header />
       <PageContainer>
         <Header1>Our Portfolio</Header1>

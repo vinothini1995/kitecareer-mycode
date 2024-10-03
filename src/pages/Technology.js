@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import AOS from 'aos';
+import { Helmet } from 'react-helmet';
 import 'aos/dist/aos.css'; // Import AOS CSS
 import Header from '../components/Header';
 import python from '../images/Tech/python.png';
@@ -64,6 +65,10 @@ const Heading = styled.h1`
   margin-top:40px;
   color: #384B70;
   margin-bottom: 40px;
+
+  @media(max-width:768px){
+  text-aign:justify;
+  }
 `;
 
 // Grid for sections
@@ -123,6 +128,9 @@ const Technology = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Technology</title>
+      </Helmet>
       <Header />
       <TechnologyContainer>
         <Heading data-aos="fade-down">"Empowering Innovation Through Our Advanced Technology"</Heading>

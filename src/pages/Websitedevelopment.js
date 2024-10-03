@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDesktop, faMobileAlt, faSearch, faLock, faShoppingCart, faWrench } from '@fortawesome/free-solid-svg-icons'; // Added faShoppingCart, faWrench for new cards
 import bannerImage from '../images/Webbanner.jpg'; // Adjust the path to your image
 import Header from '../components/Header';
+import { Helmet } from 'react-helmet';
 
 // Define keyframes for animations
 const fadeIn = keyframes`
@@ -102,6 +103,9 @@ const IconContainer = styled.div`
 const Websitedevelopment = () => {
   return (
     <div>
+      <Helmet>
+        <title>Service-Website Development</title>
+      </Helmet>
       <Header />
       <PageContainer>
         <Banner />

@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChalkboardTeacher, faLightbulb, faUserCog, faBriefcase } from '@fortawesome/free-solid-svg-icons'; // Added icons for new content
 import bannerImage from '../images/Trainingbannerfinal.jpg'; // Adjust the path to your image
 import Header from '../components/Header';
+import { Helmet } from 'react-helmet';
 
 // Define keyframes for animations
 const fadeIn = keyframes`
@@ -102,6 +103,9 @@ const IconContainer = styled.div`
 const TrainingConsulting = () => {
   return (
     <div>
+      <Helmet>
+        <title>Service-Training and Consulting</title>
+      </Helmet>
       <Header />
       <PageContainer>
         <Banner />

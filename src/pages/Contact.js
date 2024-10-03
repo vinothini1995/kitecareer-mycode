@@ -4,6 +4,7 @@ import emailjs from 'emailjs-com';
 import '../CSS/Contact.css';
 import Header from '../components/Header';
 import lady from '../images/Lady.png';
+import { Helmet } from 'react-helmet';
 const SERVICE_ID = "service_yt4t65d";
 const TEMPLATE_ID = "template_tnryv4f";
 const USER_ID = "SRXUKRqfG4h7mc1rz";
@@ -64,7 +65,9 @@ const Contact = () => {
 
   return (
     <div>
-   
+   <Helmet>
+    <title>Contact</title>
+   </Helmet>
     <div className="contact-page" style={{background:' linear-gradient(to right, #295F98, #ffffff)'}}>
     <Header/>
       <div className="contact-header" style={{background:' linear-gradient(to right, #295F98, #ffffff)'}}>

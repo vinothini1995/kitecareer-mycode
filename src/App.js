@@ -8,7 +8,7 @@ import Service from './pages/Service';
 import CarouselComp from './components/CarouselComp';
 import Productdevelopment from './pages/Productdevelopment';
 import Websitedevelopment from './pages/Websitedevelopment';
-import AIandIOTsolution from './pages/AIandIOTsolution';
+import AISolution from './pages/AISolution';
 import Cloudcomputing from './pages/Cloudcomputing';
 import Blockchaindevelopment from './pages/Blockchaindevelopment';
 import Digitalmarketing from './pages/Digitalmarketing';
@@ -24,12 +24,14 @@ import Products from './pages/Products';
 import Mobileapp from './pages/Mobileapp';
 import WhatsAppFloatingIcon from './pages/WhatsAppFloatingIcon';
 import ScrollToTop from './components/ScrollToTop';
+import IOTSolution from './pages/IOTSolution';
 function App() {
-  <ScrollToTop/>
   return (
     <div className="App">
       {/* <Home /> */}
       <Router>
+      <ScrollToTop/>
+
         <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/about"element={<About/>}/>
@@ -39,24 +41,24 @@ function App() {
         <Route path="/Productdevelopment"element={<Productdevelopment/>}/>
         <Route path="/Websitedevelopment" element={<Websitedevelopment/>}/>
         <Route path="/Mobileappdevelopment" element={<Mobileappdevelopment/>}/>
-        <Route path="/AIandIOTsolution" element={<AIandIOTsolution/>}/>
-        <Route path="Cloudcomputing" element={<Cloudcomputing/>}/>
-        <Route path="Blockchaindevelopment" element={<Blockchaindevelopment/>}/>
-        <Route path="Digitalmarketing"element={<Digitalmarketing/>}/>
-        <Route path="Portfolio" element={<Portfolio/>}/>
-        <Route path="Career" element={<Career/>}/>
-        <Route path="TrainingConsulting" element={<TrainingConsulting/>}/>
-       <Route path="OurClients" element={<OurClients/>}/>
-       <Route path="Brochure" element={<Brochure/>}/>
-       <Route path="Technology" element={<Technology/>}/>
-       <Route path="Products" element={<Products/>}/>
-       <Route path="Mobileapp" element={<Mobileapp/>}/>
+        <Route path="/AISolution" element={<AISolution/>}/>
+        <Route path="/Cloudcomputing" element={<Cloudcomputing/>}/>
+        <Route path="/Blockchaindevelopment" element={<Blockchaindevelopment/>}/>
+        <Route path="/Digitalmarketing"element={<Digitalmarketing/>}/>
+        <Route path="/Portfolio" element={<Portfolio/>}/>
+        <Route path="/Career" element={<Career/>}/>
+        <Route path="/TrainingConsulting" element={<TrainingConsulting/>}/>
+       <Route path="/OurClients" element={<OurClients/>}/>
+       <Route path="/Brochure" element={<Brochure/>}/>
+       <Route path="/Technology" element={<Technology/>}/>
+       <Route path="/Products" element={<Products/>}/>
+       <Route path="/Mobileapp" element={<Mobileapp/>}/>
+       <Route path="/IOTSolution" element={<IOTSolution/>}/>
         </Routes>
       </Router>
-      <WhatsAppFloatingIcon/>
+      {/* <WhatsAppFloatingIcon/> */}
       <Footer />
     </div>
   );
 }
-
 export default App;

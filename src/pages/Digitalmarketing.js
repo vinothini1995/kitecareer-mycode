@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBullhorn, faChartPie, faEnvelope, faSearch, faUsers, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
 import marketingBannerImage from '../images/Digitalbanner.jpg'; // Adjust the path to your banner image
 import Header from '../components/Header';
+import { Helmet } from 'react-helmet';
 
 // Define keyframes for animations
 const fadeIn = keyframes`
@@ -103,6 +104,9 @@ const IconContainer = styled.div`
 const Digitalmarketing = () => {
   return (
     <div>
+      <Helmet>
+        <title>Service-Digitalmarketing</title>
+      </Helmet>
       <Header />
       <PageContainer>
         <Banner />

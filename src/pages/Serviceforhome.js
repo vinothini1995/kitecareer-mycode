@@ -4,11 +4,12 @@ import {styled,keyframes } from 'styled-components';
 import serviceImage1 from '../images/Product.jpg';
 import serviceImage2 from '../images/web.jpg';
 import serviceImage3 from '../images/Mobileapp.jpg';
-import serviceImage4 from '../images/IOT1.jpg';
+import serviceImage4 from '../images/AIservice.avif';
 import serviceImage5 from '../images/cloud1.jpg';
 import serviceImage6 from '../images/blockchain.jpg';
 import serviceImage7 from '../images/Digitalmarketing.jpg';
 import serviceImage8 from '../images/Training2.jpg';
+import serviceImage9 from '../images/IOT.avif'
 const Serviceforhome = () => {
     const ServiceContainer = styled.div`
   padding: 20px;
@@ -40,9 +41,15 @@ const Serviceforhome = () => {
         />
         <ServiceCard
           image={serviceImage4}
-          title="AI and IoT Solutions"
-          content="Providing AI and IoT solutions that enhance automation, connectivity, and data-driven decision-making for smarter operations."
-          link="/AIandIOTsolution"
+          title="AI  Solutions"
+          content="Providing  solutions that enhance automation, connectivity, and data-driven decision-making for smarter operations."
+          link="/AISolution"
+        />
+        <ServiceCard
+          image={serviceImage9}
+          title="IOT Solutions"
+          content="Providing  solutions that enhance automation, connectivity, and data-driven decision-making for smarter operations."
+          link="/IOTSolution"
         />
          <ServiceCard
           image={serviceImage5}

@@ -4,6 +4,8 @@ import Swal from 'sweetalert2';
 import { Button, TextField, Grid, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 import Header from '../components/Header';
 import emailjs from 'emailjs-com';
+import { Helmet } from 'react-helmet';
+import { div } from 'framer-motion/client';
 
 const SERVICE_ID = "service_maqggai";
 const TEMPLATE_ID = "template_3lh9n5j";
@@ -40,7 +42,7 @@ const JobListingsSection = styled.section`
 `;
 
 const JobCard = styled.div`
-  background: silver;
+  background: linear-gradient(to right, #295F98, #ffffff);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin: 10px 0;
@@ -202,6 +204,10 @@ const Career = () => {
   };
 
   return (
+    <div>
+    <Helmet>
+      <title>Career</title>
+    </Helmet>
     <PageContainer>
       <Header />
       <HeroSection>
@@ -321,6 +327,7 @@ const Career = () => {
         </DialogContent>
       </Dialog>
     </PageContainer>
+    </div>
   );
 };
 
