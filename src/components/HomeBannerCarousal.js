@@ -58,5 +58,4 @@ function HomeBannerCarousel() {
     </CarouselContainer>
   );
 }
-
 export default HomeBannerCarousel;

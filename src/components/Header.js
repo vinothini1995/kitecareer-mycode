@@ -59,13 +59,13 @@ const NavItem = styled.div`
 `;
 
 const BrochureButton = styled(Button)`
-  background: blue !important;
+  background: darkblue !important;
   color: white !important;
   border-radius: 10px;
   margin-left: 10px !important;
 
   &:hover {
-    background-color: darkblue;
+    background-color: white;
   }
 
   @media (max-width: 768px) {
@@ -78,23 +78,39 @@ const MobileMenuButton = styled(IconButton)`
 
   @media (max-width: 768px) {
     display: block; /* Show MobileMenuButton on small screens */
-    color: blue; /* Adjust color of the button */
+    color: blue!important; /* Adjust color of the button */
   }
 `;
 
 function Header() {
   const brochureUrl = '/BrochurePage.pdf'; // Make sure the path is correct
-  const [anchorEl, setAnchorEl] = useState(null);
+
+  // State for Service dropdown menu
+  const [serviceAnchorEl, setServiceAnchorEl] = useState(null);
+
+  // State for Career dropdown menu
+  const [careerAnchorEl, setCareerAnchorEl] = useState(null);
+
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  // Open the dropdown menu
-  const handleMenuClick = (event) => {
-    setAnchorEl(event.currentTarget); // Correctly set the anchor element
+  // Open the Service dropdown menu
+  const handleServiceMenuClick = (event) => {
+    setServiceAnchorEl(event.currentTarget);
   };
 
-  // Close the dropdown menu
-  const handleMenuClose = () => {
-    setAnchorEl(null);
+  // Close the Service dropdown menu
+  const handleServiceMenuClose = () => {
+    setServiceAnchorEl(null);
+  };
+
+  // Open the Career dropdown menu
+  const handleCareerMenuClick = (event) => {
+    setCareerAnchorEl(event.currentTarget);
+  };
+
+  // Close the Career dropdown menu
+  const handleCareerMenuClose = () => {
+    setCareerAnchorEl(null);
   };
 
   // Toggle the drawer menu for mobile view
@@ -132,7 +148,7 @@ function Header() {
           {/* Dropdown for Services */}
           <NavItem>
             <Box
-              onClick={handleMenuClick}
+              onClick={handleServiceMenuClick}
               sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
             >
               <Link to="/service" style={{ color: 'blue', textDecoration: 'none' }}>
@@ -142,10 +158,10 @@ function Header() {
             </Box>
             <Menu
               id="service-menu"
-              anchorEl={anchorEl}
+              anchorEl={serviceAnchorEl}
               keepMounted
-              open={Boolean(anchorEl)}
-              onClose={handleMenuClose}
+              open={Boolean(serviceAnchorEl)}
+              onClose={handleServiceMenuClose}
               anchorOrigin={{
                 vertical: 'bottom',
                 horizontal: 'left',
@@ -161,33 +177,32 @@ function Header() {
                 },
               }}
             >
-              <MenuItem onClick={handleMenuClose} style={{ textDecoration: 'none',display:'block', }}>
-                <Link to="/Productdevelopment" style={{textDecoration:'none',display:'block'}}>
+              <MenuItem onClick={handleServiceMenuClose} style={{ textDecoration: 'none', display: 'block' }}>
+                <Link to="/Productdevelopment" style={{ textDecoration: 'none', display: 'block' }}>
                   Product Development
                 </Link>
-                <Link to="/Websitedevelopment"  style={{textDecoration:'none',display:'block'}}>
+                <Link to="/Websitedevelopment" style={{ textDecoration: 'none', display: 'block' }}>
                   Website Development
                 </Link>
-                <Link to="/AISolution"  style={{textDecoration:'none',display:'block'}}>
+                <Link to="/AISolution" style={{ textDecoration: 'none', display: 'block' }}>
                   AI Solution
                 </Link>
-                <Link to="/IOTSolution"  style={{textDecoration:'none',display:'block'}}>
+                <Link to="/IOTSolution" style={{ textDecoration: 'none', display: 'block' }}>
                   IOT Solution
                 </Link>
-                <Link to="/Cloudcomputing"  style={{textDecoration:'none',display:'block'}}>
+                <Link to="/Cloudcomputing" style={{ textDecoration: 'none', display: 'block' }}>
                   Cloud Computing
                 </Link>
-                <Link to="/Blockchaindevelopment"  style={{textDecoration:'none',display:'block'}}>
-                Blockchain Development
+                <Link to="/Blockchaindevelopment" style={{ textDecoration: 'none', display: 'block' }}>
+                  Blockchain Development
                 </Link>
-                <Link to="/Digitalmarketing"  style={{textDecoration:'none',display:'block'}}>
-                Digitalmarketing
+                <Link to="/Digitalmarketing" style={{ textDecoration: 'none', display: 'block' }}>
+                  Digital Marketing
                 </Link>
-                <Link to ="/TrainingConsulting"  style={{textDecoration:'none',display:'block'}}>
-                TrainingConsulting
+                <Link to="/TrainingConsulting" style={{ textDecoration: 'none', display: 'block' }}>
+                  Training & Consulting
                 </Link>
               </MenuItem>
-              {/* Other menu items */}
             </Menu>
           </NavItem>
           <NavItem>
@@ -199,15 +214,54 @@ function Header() {
           <NavItem>
             <Link to="/portfolio">Portfolio</Link>
           </NavItem>
+
+          {/* Dropdown for Career */}
           <NavItem>
-            <Link to="/career">Career</Link>
+            <Box
+              onClick={handleCareerMenuClick}
+              sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}
+            >
+              <Link to="/career" style={{ color: 'blue', textDecoration: 'none' }}>
+                Career
+              </Link>
+              <ArrowDropDownIcon sx={{ color: 'blue' }} />
+            </Box>
+            <Menu
+              id="career-menu"
+              anchorEl={careerAnchorEl}
+              keepMounted
+              open={Boolean(careerAnchorEl)}
+              onClose={handleCareerMenuClose}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              sx={{
+                '& .MuiPaper-root': {
+                  backgroundColor: 'white',
+                  color: 'blue',
+                },
+              }}
+            >
+              <MenuItem onClick={handleCareerMenuClose}>
+                <Link to="/Internship" style={{ textDecoration: 'none', display: 'block' }}>
+                  Internship
+                </Link>
+              </MenuItem>
+            </Menu>
           </NavItem>
+
           <NavItem>
             <Link to="/contact">Contact</Link>
           </NavItem>
-          <BrochureButton href={brochureUrl} rel="noopener noreferrer">
+          {/* <BrochureButton href={brochureUrl} rel="noopener noreferrer">
             Brochure
-          </BrochureButton>
+          </BrochureButton> */}
+          
         </NavMenu>
 
         {/* Drawer for Mobile View */}

@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import emailjs from 'emailjs-com';
 import { Helmet } from 'react-helmet';
 import { div } from 'framer-motion/client';
+import Internship from './Internship';
 
 const SERVICE_ID = "service_maqggai";
 const TEMPLATE_ID = "template_3lh9n5j";
@@ -35,36 +36,55 @@ const HeroSubheading = styled.h2`
 `;
 
 const JobListingsSection = styled.section`
-  padding: 40px 20px;
+ padding: 40px 20px;
   background: #fff;
-  margin-top: 20px;
-  gap:40px;
+  margin-top: 40px;
 `;
-
+const JobCardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+`;
 const JobCard = styled.div`
-  background: linear-gradient(to right, #295F98, #ffffff);
+  background:#f5f5f5;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 10px 0;
   padding: 20px;
+  width: 40%; /* 3 cards per row */
+  max-width: 300px; /* Optional: Set a max width */
   display: flex;
-  
   flex-direction: column;
   transition: transform 0.3s ease;
 
   &:hover {
     transform: translateY(-3px);
-    cursor:pointer;
+    cursor: pointer;
+       background: linear-gradient(to right, #295f98, #ffffff);
+
+  }
+
+  @media (max-width: 768px) {
+    width: 48%; /* 2 cards per row for smaller screens */
+  }
+
+  @media (max-width: 480px) {
+    width: 100%; /* 1 card per row for mobile */
   }
 `;
+
+
 
 const JobTitle = styled.h3`
   margin: 0;
   font-size: 24px;
+  color:black;
 `;
 
 const JobDetails = styled.p`
   margin: 10px 0;
+    color:black;
+
 `;
 
 const StyledTextField = styled(TextField)`
@@ -217,11 +237,13 @@ const Career = () => {
       </HeroSection>
 
       <JobListingsSection>
-        <h2>Current Openings</h2>
-        {['Senior Computer Programmer', 'UX Designer', 'Product Manager', 'Network Engineer', 'Front-end Developer', 'Full Stack Developer', 'Senior System Engineer', 'Mobile Developer'].map((title, index) => (
+        <h1 style={{textAlign:'center',}}>Current Openings</h1>
+        <JobCardContainer>
+
+        {['Senior Computer Programmer', 'UX Designer', 'Product Manager', 'Network Engineer', 'Front-End Developer', 'Full Stack Developer', 'Senior System Engineer', 'Mobile Developer','ML Engineer'].map((title, index) => (
           <JobCard key={index}>
             <JobTitle>{title}</JobTitle>
-            <JobDetails>Location: KiteCareer, Surandai</JobDetails>
+            <JobDetails>Location: Kitecareer, Surandai</JobDetails>
             <JobDetails>Type: Full-Time</JobDetails>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               <Button variant="contained" color="primary" onClick={handleClickOpen} sx={{ width: '200px', textAlign: 'center', justifyContent: 'center', alignItems: 'center' }}>
@@ -230,6 +252,8 @@ const Career = () => {
             </div>
           </JobCard>
         ))}
+            </JobCardContainer>
+
       </JobListingsSection>
 
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
@@ -326,6 +350,7 @@ const Career = () => {
           </form>
         </DialogContent>
       </Dialog>
+<Internship/>
     </PageContainer>
     </div>
   );

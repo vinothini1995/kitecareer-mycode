@@ -17,9 +17,10 @@ import printmys from '../images/Portfolio/print.jpg';
 import wonderart from '../images/Portfolio/wonderart.jpg';
 import eera from '../images/Portfolio/eera.jpg';
 import transcloud from '../images/Portfolio/transcloud.jpg';
-import nimir from '../images/Portfolio/Nimir.png';
+import nimir from '../images/Portfolio/nimir.jpg';
 import subha from '../images/Portfolio/subha.jpg';
 import beauty from '../images/Portfolio/beauty.jpg';
+import cake from '../images/Portfolio/cake.jpg';
 // Initialize AOS
 
 
@@ -371,6 +372,22 @@ const Portfolio = () => {
             </ProjectInfo>
           </PortfolioText>
           <PortfolioImage src={beauty} alt="beauty" />
+        </PortfolioItem>
+
+        <PortfolioItem data-aos="fade-left">
+          <PortfolioText>
+            <ProjectTitle>Haven Cake</ProjectTitle>
+            <ProjectDescription>
+              Blockchain solution for enhancing transparency and security in supply chain management. Provides immutable records of transactions and ensures trust.
+            </ProjectDescription>
+            <ProjectInfo>
+              <span><strong>Duration:</strong> 10 months</span>
+              <span><strong>Technologies:</strong> Ethereum, Solidity</span>
+              <LearnMoreButton href="https://kitecareer.com/Havencake/" target="_blank" rel="noopener noreferrer">View
+              </LearnMoreButton>
+            </ProjectInfo>
+          </PortfolioText>
+          <PortfolioImage src={cake} alt="beauty" />
         </PortfolioItem>
       </PageContainer>
     </div>

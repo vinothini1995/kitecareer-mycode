@@ -1,6 +1,8 @@
 import React from 'react';
 import '../CSS/Footer.css';
-import imagebg from '../images/Kite Logo White.png'
+import { Link } from 'react-router-dom'; // Import Link from React Router
+
+import imagebg from '../images/logo1.png'
 function Footer() {
   return (
     <footer className="footer">
@@ -16,13 +18,12 @@ function Footer() {
         <div className="footer-section">
           <h4>About Company</h4>
           <ul>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/service">Services</a></li>
-            <li><a href="/technology">Technology</a></li>
-
-            <li><a href="contact">Contact Us</a></li>
-            <li><a href="/portfolio">Portfolio</a></li>
-            <li><a href="/career">Career</a></li>
+          <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/service">Services</Link></li>
+            <li><Link to="/technology">Technology</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
+            <li><Link to="/portfolio">Portfolio</Link></li>
+            <li><Link to="/career">Career</Link></li>
 
 
           </ul>

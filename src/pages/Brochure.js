@@ -3,7 +3,7 @@ import { IconButton } from '@mui/material';
 import DownloadIcon from '@mui/icons-material/Download';
 
 const Brochure = () => {
-  const brochureUrl = "/BrochurePage.pdf"; // Make sure the path is correct
+  const brochureUrl = `${process.env.PUBLIC_URL}/BrochurePage.pdf`; // Make sure the path is correct
 
   return (
     <div style={styles.container}>
@@ -42,5 +42,4 @@ const styles = {
     color: '#000',
   }
 };
-
 export default Brochure;

@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { keyframes, createGlobalStyle } from 'styled-components';
 import background from '../images/gradientabout.avif';
 import Header from '../components/Header';
-import ServiceImage from '../images/aboutbg.jpg'; // Your left-side image
+import ServiceImage from '../images/about2.jpg'; // Your left-side image
 import LeadershipTeam from '../components/LeadershipTeam';
 import OurClients from './OurClients';
 import bgimg from '../images/techbg.jpg';
@@ -12,7 +12,7 @@ import Workflow from '../pages/WorkFlow';
 import ServicesSection from './ServicesSection';
 import bgaboutimg from '../images/aboutbg.jpg';
 import { Helmet } from 'react-helmet';
-
+import Women from './Women';
 // Animation for fade-in
 const fadeIn = keyframes`
   from {
@@ -59,7 +59,7 @@ const ProjectContainer = styled.div`
 const LeftImage = styled.img`
   width: 50%;
   height: auto; /* Maintain aspect ratio */
-
+  border-radius:20px;
   @media (max-width: 768px) {
     width: 100%; /* Full width on mobile */
     margin-bottom: 20px;
@@ -213,6 +213,7 @@ const About = ({ textColor }) => {
       <ServicesSection />
       <LeadershipTeam />
       <OurClients />
+      <Women/>
     </div>
   );
 };

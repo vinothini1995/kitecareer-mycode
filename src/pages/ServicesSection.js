@@ -1,10 +1,10 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import AIAbout from '../images/aiabout.avif';
-import IOTAbout from '../images/iot.jpg';
+import IOTAbout from '../images/aboutiot.jpg';
 import BlockchainAbout from '../images/blockchainabt.avif';
-import MachineAbout from '../images/machine.avif';
-import SalesAbout from '../images/salesforce.avif';
+import MachineAbout from '../images/aboutml.jpg';
+import SalesAbout from '../images/aboutsales.avif';
 import CloudAbout from '../images/cloudabout.avif';
 
 // Define animations
@@ -32,12 +32,26 @@ const ServiceItem = styled.div`
   padding: 20px;
   animation: ${fadeIn} 1.5s ease-in-out; /* Fade-in effect on page load */
   text-align: left;
+  background:#FFF2D7;
+  border-radius:20px;
+    margin-left:10px;
 
   @media (max-width: 768px) {
     text-align: center;
   }
 `;
-
+const ServiceItem1 = styled.div`
+  flex: 1;
+  padding: 20px;
+  border-radius:10px;
+  margin-right:10px;
+  animation: ${fadeIn} 1.5s ease-in-out; /* Fade-in effect on page load */
+  text-align: left;
+  background:#FFE0B5;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+`;
 // Apply animation to CenterImage
 const CenterImage = styled.img`
   max-width: 300px;
@@ -100,12 +114,12 @@ const ServicesSection = () => (
     <ServicesWrapper>
       <CenterImage src={IOTAbout} alt="IoT Service Image" />
 
-      <ServiceItem>
+      <ServiceItem1>
         <h1>Internet Of Things (IoT)</h1>
         <p style={{ textAlign: 'justify' }}>
           Our expertise in IoT enables businesses to seamlessly integrate smart devices, sensors, and networks, creating interconnected systems that drive efficiency, enhance data collection, and enable real-time decision-making. By connecting physical devices to the digital world, we help organizations gain valuable insights and improve their overall performance.
         </p>
-      </ServiceItem>
+      </ServiceItem1>
     </ServicesWrapper>
 
     {/* Third service */}
@@ -124,12 +138,12 @@ const ServicesSection = () => (
     <ServicesWrapper>
       <CenterImage src={MachineAbout} alt="Machine Learning Service Image" />
 
-      <ServiceItem>
+      <ServiceItem1>
         <h1>Machine Learning</h1>
         <p style={{ textAlign: 'justify' }}>
           Machine Learning (ML) is at the core of our data-driven solutions, empowering businesses to transform raw data into actionable insights. By developing predictive models, automation systems, and intelligent algorithms, we help organizations leverage the power of ML to make faster, more accurate decisions.
         </p>
-      </ServiceItem>
+      </ServiceItem1>
     </ServicesWrapper>
 
     {/* Fifth service */}
@@ -148,12 +162,12 @@ const ServicesSection = () => (
     <ServicesWrapper>
       <CenterImage src={CloudAbout} alt="Cloud Service Image" />
 
-      <ServiceItem>
+      <ServiceItem1>
         <h1>Cloud Services</h1>
         <p style={{ textAlign: 'justify' }}>
           Harness the power of cloud solutions to scale your business securely and efficiently. With the ever-evolving landscape of technology, adopting cloud services is essential for staying competitive and agile. Empower your organization with innovative tools that enhance productivity and drive growth while adapting to the dynamic demands of your industry.
         </p>
-      </ServiceItem>
+      </ServiceItem1>
     </ServicesWrapper>
   </>
 );

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import bannervdo from '../images/backgroundbanner.webm';
-import logo from '../images/kite logo vector png.png';
+import bannervdo from '../images/bannercutfinal.webm';
+import logo from '../images/Kite Logo White.png';
 import { Box, IconButton, Button, CardContent } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faTwitter, faInstagram, faLinkedinIn, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faTwitter, faInstagram, faLinkedinIn, faYoutube, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faBars, faPhone, faEnvelope, faEye, faBullseye, faHandsHelping } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -47,7 +47,7 @@ const Navbar = styled.nav`
 
 const MenuItem = styled(Link)`
   margin: 0 15px;
-  color: #001F3F;
+  color: white;
   text-decoration: none;
   font-size: 18px;
   z-index: 1;
@@ -99,6 +99,7 @@ const Video = styled.video`
 
   @media (max-width: 320px) {
     width: 100%;
+     height: 100%;
   }
 `;
 
@@ -135,7 +136,7 @@ const Phone = styled.div`
 `;
 
 const SocialMediaIcon = styled(FontAwesomeIcon)`
-  color: #001F3F;
+  color:white;
   font-size: 24px;
   cursor: pointer;
  &:hover {
@@ -150,7 +151,7 @@ const SocialMediaIcon = styled(FontAwesomeIcon)`
 
 const ContactIcon = styled(FontAwesomeIcon)`
   margin-right: 10px;
-  color: #001F3F;
+  color: white;
 
   
   @media (max-width: 768px) {
@@ -162,6 +163,7 @@ const Heading=styled.div`
  @media (max-width: 768px) {
     font-size: 4px;
     color:white;
+
   }
 `;
 
@@ -174,7 +176,8 @@ const CardContainer = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 190px;
-  margin-bottom: 300px;
+  // margin-bottom: 300px;
+  
 `;
 
 const Card = styled.div`
@@ -187,6 +190,12 @@ const Card = styled.div`
   text-align: justify;
   transition: transform 0.3s ease;
   cursor: pointer;
+  @media (max-width: 768px) {
+    font-size: 14px;
+      margin-top: 190px;
+
+  
+  }
 
   &:hover {
     transform: translateY(-20px);
@@ -229,7 +238,7 @@ const CardIcon = styled.div`
 
 const StyledLink = styled.a`
   text-decoration: none !important;
-  color: #001F3F;
+  color: white;
   font-size: 20px;
 
   &:hover {
@@ -276,20 +285,23 @@ const Home = () => {
               <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                 <SocialMediaIcon icon={faFacebookF} />
               </a>
-              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://x.com/i/flow/login?redirect_after_login=%2FKiteCareer2018" target="_blank" rel="noopener noreferrer">
                 <SocialMediaIcon icon={faTwitter} />
               </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/kitecareer2018/" target="_blank" rel="noopener noreferrer">
                 <SocialMediaIcon icon={faInstagram} />
               </a>
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/company/kitecareer/" target="_blank" rel="noopener noreferrer">
                 <SocialMediaIcon icon={faLinkedinIn} />
               </a>
-              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.youtube.com/@KiteCareer" target="_blank" rel="noopener noreferrer">
                 <SocialMediaIcon icon={faYoutube} />
               </a>
+              <a href="https://www.facebook.com/kitecareer.kitecareer.5?mibextid=2JQ9oc" target="_blank" rel="noopener noreferrer">
+                <SocialMediaIcon icon={faFacebook} />
+              </a>
               <Phone>
-                <p style={{ color: '#001F3F' }}>
+                <p style={{ color: 'white' }}>
                   <ContactIcon icon={faPhone} /> 9498478472
                 </p>
                 <p>
@@ -315,16 +327,16 @@ const Home = () => {
                 <MenuItem to="/portfolio" isOpen={menuOpen}>Portfolio</MenuItem>
                 <MenuItem to="/career" isOpen={menuOpen}>Career</MenuItem>
                 <MenuItem to="/contact" isOpen={menuOpen}>Contact</MenuItem>
-                <Button
+                {/* <Button
                   sx={{
                     color: 'white',
-                    background: '#001F3F',
-                    '&:hover': { background: '#007bff' }
+                    background: '#007bff',
+                    '&:hover': { background: 'white',color:'#007bff' }
                   }}
                   href={brochureUrl}
                 >
                   Brochure
-                </Button>
+                </Button> */}
               </Navbar>
             </LogoContainer>
           </motion.div>
@@ -336,18 +348,18 @@ const Home = () => {
             </Video>
           </VideoContainer>
           <Heading>
-          <motion.h1 style={{ textAlign: 'center',marginTop:'90px', color: '#384B70',fontSize:'55px' }} variants={slideInUp}>
+          <motion.h1 style={{ textAlign: 'center',marginTop:'90px', color: 'white',fontSize:'55px' }} variants={slideInUp}>
        <b> Innovative Solutions for a Digital World</b>
       </motion.h1>
       </Heading>
 
-      <motion.h3 style={{ textAlign: 'center', color: '#384B70',fontSize:'17px' }} variants={slideInUp}>
+      <motion.h3 style={{ textAlign: 'center', color: 'white',fontSize:'17px' }} variants={slideInUp}>
         "Delivering cutting-edge, customized software solutions to help businesses thrive in the fast-paced digital landscape."
       </motion.h3>
 
       <Link to="/contact" style={{ textDecoration: 'none' }}>
         <motion.div variants={slideInUp}>
-          <IconButton variant="contained"style={{color:'white',background:'#001f3f',padding:'17px'}}>LET'S TALK</IconButton>
+          <IconButton variant="contained"style={{color:'#001f3f',background:'white',padding:'17px'}}>LET'S TALK</IconButton>
         </motion.div>
       </Link>
    
@@ -394,8 +406,9 @@ const Home = () => {
                     </CardIcon>
                     <span>Core Values</span>
                   </CardHeading>
-                  <p>
-                    Integrity, Quality, Teamwork, Customer Commitment, Innovation, and Social Responsibility.
+                  <p >
+                    Integrity, Quality, Teamwork, Customer Commitment and Innovation .    These values drive our decisions, inspire our employees,strengthen our relationships with customers.
+
                   </p>
                 </CardContent>
               </Card>

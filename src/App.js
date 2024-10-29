@@ -1,6 +1,6 @@
 
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -25,6 +25,8 @@ import Mobileapp from './pages/Mobileapp';
 import WhatsAppFloatingIcon from './pages/WhatsAppFloatingIcon';
 import ScrollToTop from './components/ScrollToTop';
 import IOTSolution from './pages/IOTSolution';
+import Internship from './pages/Internship';
+
 function App() {
   return (
     <div className="App">
@@ -33,6 +35,7 @@ function App() {
       <ScrollToTop/>
 
         <Routes>
+         <Route path="/Footer"  element={<Footer/>}/>
         <Route path="/" element={<Home/>}/>
         <Route path="/about"element={<About/>}/>
         <Route path="/service"element={<Service/>}/>
@@ -54,10 +57,13 @@ function App() {
        <Route path="/Products" element={<Products/>}/>
        <Route path="/Mobileapp" element={<Mobileapp/>}/>
        <Route path="/IOTSolution" element={<IOTSolution/>}/>
-        </Routes>
-      </Router>
-      {/* <WhatsAppFloatingIcon/> */}
+       <Route path="/Internship" element={<Internship/>}/>
+      </Routes>
+     
+      <WhatsAppFloatingIcon/>
       <Footer />
+      </Router>
+      
     </div>
   );
 }
